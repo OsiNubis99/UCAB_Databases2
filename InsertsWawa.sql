@@ -103,26 +103,26 @@ INSERT INTO CONTINGENCIA (id, nombre, descripcion)
 
 
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (1,'parada1',1);
+  VALUES (1,'parada1','14.47, -66.59');
 
   
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (2,'parada2',3);
+  VALUES (2,'parada2','30.47, -66.89');
   
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (3,'parada3',55);
+  VALUES (3,'parada3','10.17, -63.69');
   
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (4,'parada4',77);
+  VALUES (4,'parada4','10.67, -65.89');
   
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (5,'parada5',88);
+  VALUES (5,'parada5','20.47, -66.89');
   
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (6,'parada6',045);
+  VALUES (6,'parada6','16.47, -23.89');
   
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (7,'parada7',23);
+  VALUES (7,'parada7','10.47, -66.83');
 
 
  INSERT INTO RECORRE (id,ruta_id,salida,llegada)
