@@ -135,17 +135,17 @@ INSERT INTO RUTA (id, contingencia_id, nombre)
   VALUES (7,'parada7','10.47, -66.83');
 
 
- INSERT INTO RECORRE (id,ruta_id,salida,llegada)
-  VALUES (1,1,1,3);
-   INSERT INTO RECORRE (id,ruta_id,salida,llegada)
-  VALUES (2,2,5,6);
-   INSERT INTO RECORRE (id,ruta_id,salida,llegada)
-  VALUES (3,3,1,6);
-   INSERT INTO RECORRE (id,ruta_id,salida,llegada)
-  VALUES (4,4,1,7);
-   INSERT INTO RECORRE (id,ruta_id,salida,llegada)
+ INSERT INTO RECORRE (id,ruta_id,pos,punto)
+  VALUES (1,1,1,1);
+ INSERT INTO RECORRE (id,ruta_id,pos,punto)
+  VALUES (2,1,2,2);
+ INSERT INTO RECORRE (id,ruta_id,pos,punto)
+  VALUES (3,1,3,3);
+ INSERT INTO RECORRE (id,ruta_id,pos,punto)
+  VALUES (4,1,4,4);
+ INSERT INTO RECORRE (id,ruta_id,pos,punto)
   VALUES (5,5,4,7);
-   INSERT INTO RECORRE (id,ruta_id,salida,llegada)
+ INSERT INTO RECORRE (id,ruta_id,pos,punto)
   VALUES (6,6,2,5);
 
 
