@@ -80,3 +80,38 @@ INSERT INTO CONTINGENCIA (id, nombre, descripcion)
   VALUES (6,1,'redoma');
 
 
+ INSERT INTO PED (id,nombre,coordenadas)
+  VALUES (1,'parada1',1);
+
+  
+ INSERT INTO PED (id,nombre,coordenadas)
+  VALUES (2,'parada2',1);
+  
+ INSERT INTO PED (id,nombre,coordenadas)
+  VALUES (3,'parada3',1);
+  
+ INSERT INTO PED (id,nombre,coordenadas)
+  VALUES (4,'parada4',1);
+  
+ INSERT INTO PED (id,nombre,coordenadas)
+  VALUES (5,'parada5',1);
+  
+ INSERT INTO PED (id,nombre,coordenadas)
+  VALUES (6,'parada6',1);
+  
+ INSERT INTO PED (id,nombre,coordenadas)
+  VALUES (7,'parada7',1);
+
+
+ INSERT INTO RECORRE (id,ruta_id,salida,llegada)
+  VALUES (1,1,1,3);
+   INSERT INTO RECORRE (id,ruta_id,salida,llegada)
+  VALUES (2,2,5,6);
+   INSERT INTO RECORRE (id,ruta_id,salida,llegada)
+  VALUES (3,3,1,6);
+   INSERT INTO RECORRE (id,ruta_id,salida,llegada)
+  VALUES (4,4,1,7);
+   INSERT INTO RECORRE (id,ruta_id,salida,llegada)
+  VALUES (5,5,4,7);
+   INSERT INTO RECORRE (id,ruta_id,salida,llegada)
+  VALUES (6,6,2,5);
