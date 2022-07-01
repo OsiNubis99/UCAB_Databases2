@@ -20,42 +20,14 @@ INSERT INTO DATOS VALUES ('Héctor','Jiménez');
 INSERT INTO DATOS VALUES ('Sara','López');
 
 
-
-
-INSERT INTO PED (id,nombre,tipo,coordenadas)
-  VALUES (0,'parada1',1,'14.47, -66.59');
- INSERT INTO PED (id,nombre,tipo,coordenadas)
-  VALUES (0,'parada2',2,'30.47, -66.89');
- INSERT INTO PED (id,nombre,tipo,coordenadas)
-  VALUES (0,'parada3',3,'10.17, -63.69');
- INSERT INTO PED (id,nombre,tipo,coordenadas)
-  VALUES (4,'parada4',1,'10.67, -65.89');
- INSERT INTO PED (id,nombre,tipo,coordenadas)
-  VALUES (0,'parada5',2,'20.47, -66.89');
-INSERT INTO CONTINGENCIA (id, nombre, descripcion)
-  VALUES (0,'lluvia','llueve');
-INSERT INTO RUTA (id, contingencia_id, nombre)
-  VALUES (0,1,'plaza venezuela');
- INSERT INTO RECORRE (id,ruta_id,pos,punto)
-VALUES (0,4,1,1);
- INSERT INTO RECORRE (id,ruta_id,pos,punto)
-VALUES (0,4,2,2);
- INSERT INTO RECORRE (id,ruta_id,pos,punto)
-VALUES (0,4,3,3);
- INSERT INTO RECORRE (id,ruta_id,pos,punto)
-VALUES (0,4,4,4);
- INSERT INTO RECORRE (id,ruta_id,pos,punto)
-VALUES (0,4,5,5);
-INSERT INTO UNIDAD (id,placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
-  VALUES (0,'AD85956F', RangoFecha('06-JUN-2022', null), EMPTY_BLOB(), 'OPERATIVA', 4, 'WAWA', ' ', 0);
-SELECT * FROM UNIDAD ;
-
-
-
-
-
 INSERT INTO UNIDAD (placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
   VALUES ('AD85956F', RangoFecha('06-JUN-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWA', ' ', 0);
+
+
+
+
+
+  
 INSERT INTO UNIDAD (placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
   VALUES ('JH21786A', RangoFecha('10-JUL-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWITA', ' ', 0);
 INSERT INTO UNIDAD (placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
