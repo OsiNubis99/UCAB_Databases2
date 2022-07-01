@@ -1,23 +1,23 @@
-INSERT INTO UNIDAD DATOS('Andrés','Álvarez');
-INSERT INTO UNIDAD DATOS('Cristiano','Andrade');
-INSERT INTO UNIDAD DATOS('Gerard','Benítez');
-INSERT INTO UNIDAD DATOS('Lionel','Castillo');
-INSERT INTO UNIDAD DATOS('Neymar','Castro');
-INSERT INTO UNIDAD DATOS('Ana','Contreras');
-INSERT INTO UNIDAD DATOS('Enzo','De León');
-INSERT INTO UNIDAD DATOS('Eva','Díaz');
-INSERT INTO UNIDAD DATOS('Eric','Duarte');
-INSERT INTO UNIDAD DATOS('Hugo','Espinoza');
-INSERT INTO UNIDAD DATOS('Iván','Fernández');
-INSERT INTO UNIDAD DATOS('Juan','Flores');
-INSERT INTO UNIDAD DATOS('Lara','García');
-INSERT INTO UNIDAD DATOS('Leo','Giménez');
-INSERT INTO UNIDAD DATOS('Luz','Gómez');
-INSERT INTO UNIDAD DATOS('Mar','Gonzales');
-INSERT INTO UNIDAD DATOS('Nora','Gutiérrez');
-INSERT INTO UNIDAD DATOS('Raúl','Hernández');
-INSERT INTO UNIDAD DATOS('Héctor','Jiménez');
-INSERT INTO UNIDAD DATOS('Sara','López');
+INSERT INTO DATOS VALUES ('Andrés','Álvarez');
+INSERT INTO DATOS VALUES ('Cristiano','Andrade');
+INSERT INTO DATOS VALUES ('Gerard','Benítez');
+INSERT INTO DATOS VALUES ('Lionel','Castillo');
+INSERT INTO DATOS VALUES ('Neymar','Castro');
+INSERT INTO DATOS VALUES ('Ana','Contreras');
+INSERT INTO DATOS VALUES ('Enzo','De León');
+INSERT INTO DATOS VALUES ('Eva','Díaz');
+INSERT INTO DATOS VALUES ('Eric','Duarte');
+INSERT INTO DATOS VALUES ('Hugo','Espinoza');
+INSERT INTO DATOS VALUES ('Iván','Fernández');
+INSERT INTO DATOS VALUES ('Juan','Flores');
+INSERT INTO DATOS VALUES ('Lara','García');
+INSERT INTO DATOS VALUES ('Leo','Giménez');
+INSERT INTO DATOS VALUES ('Luz','Gómez');
+INSERT INTO DATOS VALUES ('Mar','Gonzales');
+INSERT INTO DATOS VALUES ('Nora','Gutiérrez');
+INSERT INTO DATOS VALUES ('Raúl','Hernández');
+INSERT INTO DATOS VALUES ('Héctor','Jiménez');
+INSERT INTO DATOS VALUES ('Sara','López');
 
 
 INSERT INTO UNIDAD (placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
@@ -92,7 +92,7 @@ INSERT INTO CONTINGENCIA (id, nombre, descripcion)
   VALUES (7,'alcabala','retraso');
 
 
-  INSERT INTO RUTA (id, contingencia_id, nombre)
+INSERT INTO RUTA (id, contingencia_id, nombre)
   VALUES (1,1,'plaza venezuela');
   INSERT INTO RUTA (id, contingencia_id, nombre)
   VALUES (2,1,'caricuao');
@@ -170,20 +170,4 @@ INSERT INTO CATEGORIA (id,nombre,foto)
 
 
      INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
-  VALUES (1,RangoFecha('06-JUN-2022', null)),1,1,2);
-  
-     INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
-  VALUES (2,RangoFecha('06-JUN-2022', null)),1,3,1);
-  
-     INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
-  VALUES (3,RangoFecha('06-JUN-2022', null)),1,1,3);
-  
-     INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
-  VALUES (4, RangoFecha('06-JUN-2022', null)),1,1,4);
-  
-     INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
-  VALUES (5, RangoFecha('06-JUN-2022', null)),1,1,5);
-  
-     INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
-  VALUES (6, RangoFecha('06-JUN-2022', null)),1,1,6);
-
+  VALUES (4,'natural','Wawa','PLAN4','Caract4', RangoFecha('06-JUN-2022', null));
