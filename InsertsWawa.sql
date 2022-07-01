@@ -37,12 +37,16 @@ INSERT INTO UNIDAD (placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero
   VALUES ('AC8GHFFF', RangoFecha('03-JUN-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWA', ' ', 0);
 
 
-INSERT INTO CLIENTE VALUES(NULL,DatosPersonales('Alexis Quiros','CEDULA','15459565'),'01-JUL-2022','NATURAL','04125941461','MASCULINO',NULL);
-INSERT INTO CLIENTE VALUES(NULL,DatosPersonales('Andres Hurtado','CEDULA','20459862'),'06-JUN-2022','NATURAL','04125941461','MASCULINO',NULL);
-INSERT INTO CLIENTE VALUES(NULL,DatosPersonales('Sergio Capon','CEDULA','26747663'),'10-AUG-2022','NATURAL','04125941461','MASCULINO',NULL);
-INSERT INTO CLIENTE VALUES(NULL,DatosPersonales('Mariah Tacanga','CEDULA','28749638'),'23-MAY-2022','NATURAL','04125941461','FEMENINO',NULL);
-INSERT INTO CLIENTE VALUES(NULL,DatosPersonales('UCAB','RIF','J101295658'),'1-MAY-2022','CORPORATIVO',NULL,NULL,EMPTY_BLOB()) RETURNING FOTO INTO V_TEMP;
-INSERT INTO CLIENTE VALUES(NULL,DatosPersonales('PANA','RIF','J854596981'),'6-MAY-2022','CORPORATIVO',NULL,NULL,EMPTY_BLOB()) RETURNING FOTO INTO V_TEMP;
+INSERT INTO CLIENTE (id, datos, FECHA_DESDE, tipo, telefono, genero)
+  VALUES (0, DatosPersonales('Alexis Quiros','CEDULA','10059565'),'01-JUL-2022','NATURAL','04125941461','MASCULINO');
+INSERT INTO CLIENTE (id, datos, FECHA_DESDE, tipo, telefono, genero)
+  VALUES (1, DatosPersonales('Fernando','CEDULA','15452365'),'01-JUL-2022','NATURAL','04125941461','MASCULINO');
+INSERT INTO CLIENTE (id, datos, FECHA_DESDE, tipo, telefono, genero)
+  VALUES (2, DatosPersonales('Andrea','CEDULA','15454565'),'01-JUL-2022','NATURAL','04125941461','MASCULINO');
+INSERT INTO CLIENTE VALUES(3,DatosPersonales('Sergio Capon','CEDULA','26747663'),'10-AUG-2022','NATURAL','04125941461','MASCULINO',NULL);
+INSERT INTO CLIENTE VALUES(4,DatosPersonales('Mariah Tacanga','CEDULA','28749638'),'23-MAY-2022','NATURAL','04125941461','FEMENINO',NULL);
+INSERT INTO CLIENTE VALUES(5,DatosPersonales('UCAB','RIF','J101295658'),'1-MAY-2022','CORPORATIVO','021244455','MASCULINO',EMPTY_BLOB()) RETURNING FOTO INTO V_TEMP;
+INSERT INTO CLIENTE VALUES(6,DatosPersonales('PANA','RIF','J854596981'),'6-MAY-2022','CORPORATIVO','041455555','FEMENINO',EMPTY_BLOB()) RETURNING FOTO INTO V_TEMP;
 
     INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
   VALUES (1, 'serivicio1', 'a todos lados', 1);
@@ -166,4 +170,20 @@ INSERT INTO CATEGORIA (id,nombre,foto)
 
 
      INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
-  VALUES (4,'natural','Wawa','PLAN4','Caract4', RangoFecha('06-JUN-2022', null));
+  VALUES (1,RangoFecha('06-JUN-2022', null)),1,1,2);
+  
+     INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
+  VALUES (2,RangoFecha('06-JUN-2022', null)),1,3,1);
+  
+     INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
+  VALUES (3,RangoFecha('06-JUN-2022', null)),1,1,3);
+  
+     INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
+  VALUES (4, RangoFecha('06-JUN-2022', null)),1,1,4);
+  
+     INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
+  VALUES (5, RangoFecha('06-JUN-2022', null)),1,1,5);
+  
+     INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
+  VALUES (6, RangoFecha('06-JUN-2022', null)),1,1,6);
+
