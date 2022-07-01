@@ -20,160 +20,160 @@ INSERT INTO DATOS VALUES ('Héctor','Jiménez');
 INSERT INTO DATOS VALUES ('Sara','López');
 
 
-INSERT INTO UNIDAD (placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
-  VALUES ('AD85956F', RangoFecha('06-JUN-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWA', ' ', 0);
+INSERT INTO UNIDAD (id, placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
+  VALUES (0,'AD85956F', RangoFecha('06-JUN-2022', null), EMPTY_BLOB(), 'OPERATIVA', 1, 'WAWA', ' ', 0);
 
 
 
 
 
   
-INSERT INTO UNIDAD (placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
-  VALUES ('JH21786A', RangoFecha('10-JUL-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWITA', ' ', 0);
-INSERT INTO UNIDAD (placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
-  VALUES ('RT852456', RangoFecha('22-JUN-2022', null), EMPTY_BLOB(), 'NO OPERATIVA', NULL, 'WAWA', ' ', 0);
+INSERT INTO UNIDAD (id,placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
+  VALUES (0,'JH21786A', RangoFecha('10-JUL-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWITA', ' ', 0);
+INSERT INTO UNIDAD (id,placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
+  VALUES (0,'RT852456', RangoFecha('22-JUN-2022', null), EMPTY_BLOB(), 'NO OPERATIVA', NULL, 'WAWA', ' ', 0);
 
-INSERT INTO UNIDAD (placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
-  VALUES ('AB85916F', RangoFecha('06-JUN-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWA', ' ', 0);
+INSERT INTO UNIDAD (id,placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
+  VALUES (0,'AB85916F', RangoFecha('06-JUN-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWA', ' ', 0);
 
-  INSERT INTO UNIDAD (placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
-  VALUES ('BD869FFF', RangoFecha('08-JUN-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWA', ' ', 0);
+  INSERT INTO UNIDAD (id,placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
+  VALUES (0,'BD869FFF', RangoFecha('08-JUN-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWA', ' ', 0);
 
-    INSERT INTO UNIDAD (placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
-  VALUES ('AC8GHFFF', RangoFecha('03-JUN-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWA', ' ', 0);
+    INSERT INTO UNIDAD (id,placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
+  VALUES (0,'AC8GHFFF', RangoFecha('03-JUN-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWA', ' ', 0);
 
 
 INSERT INTO CLIENTE (id, datos, FECHA_DESDE, tipo, telefono, genero)
   VALUES (0, DatosPersonales('Alexis Quiros','CEDULA','10059565'),'01-JUL-2022','NATURAL','04125941461','MASCULINO');
 INSERT INTO CLIENTE (id, datos, FECHA_DESDE, tipo, telefono, genero)
-  VALUES (1, DatosPersonales('Fernando','CEDULA','15452365'),'01-JUL-2022','NATURAL','04125941461','MASCULINO');
+  VALUES (0, DatosPersonales('Fernando','CEDULA','15452365'),'01-JUL-2022','NATURAL','04125941461','MASCULINO');
 INSERT INTO CLIENTE (id, datos, FECHA_DESDE, tipo, telefono, genero)
-  VALUES (2, DatosPersonales('Andrea','CEDULA','15454565'),'01-JUL-2022','NATURAL','04125941461','MASCULINO');
-INSERT INTO CLIENTE VALUES(3,DatosPersonales('Sergio Capon','CEDULA','26747663'),'10-AUG-2022','NATURAL','04125941461','MASCULINO',NULL);
-INSERT INTO CLIENTE VALUES(4,DatosPersonales('Mariah Tacanga','CEDULA','28749638'),'23-MAY-2022','NATURAL','04125941461','FEMENINO',NULL);
-INSERT INTO CLIENTE VALUES(5,DatosPersonales('UCAB','RIF','J101295658'),'1-MAY-2022','CORPORATIVO','021244455','MASCULINO',EMPTY_BLOB()) RETURNING FOTO INTO V_TEMP;
-INSERT INTO CLIENTE VALUES(6,DatosPersonales('PANA','RIF','J854596981'),'6-MAY-2022','CORPORATIVO','041455555','FEMENINO',EMPTY_BLOB()) RETURNING FOTO INTO V_TEMP;
+  VALUES (0, DatosPersonales('Andrea','CEDULA','15454565'),'01-JUL-2022','NATURAL','04125941461','MASCULINO');
+INSERT INTO CLIENTE VALUES(0,DatosPersonales('Sergio Capon','CEDULA','26747663'),'10-AUG-2022','NATURAL','04125941461','MASCULINO',NULL);
+INSERT INTO CLIENTE VALUES(0,DatosPersonales('Mariah Tacanga','CEDULA','28749638'),'23-MAY-2022','NATURAL','04125941461','FEMENINO',NULL);
+INSERT INTO CLIENTE VALUES(0,DatosPersonales('UCAB','RIF','J101295658'),'1-MAY-2022','CORPORATIVO','021244455','MASCULINO',EMPTY_BLOB()) RETURNING FOTO INTO V_TEMP;
+INSERT INTO CLIENTE VALUES(0,DatosPersonales('PANA','RIF','J854596981'),'6-MAY-2022','CORPORATIVO','041455555','FEMENINO',EMPTY_BLOB()) RETURNING FOTO INTO V_TEMP;
 
     INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
-  VALUES (1, 'serivicio1', 'a todos lados', 1);
+  VALUES (0, 'serivicio1', 'a todos lados', 1);
   INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
-  VALUES (2, 'serivicio1', 'a todos lados', 0);
+  VALUES (0, 'serivicio1', 'a todos lados', 0);
   INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
-  VALUES (3, 'serivicio1', 'a todos lados', 0);
+  VALUES (0, 'serivicio1', 'a todos lados', 0);
   INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
-  VALUES (4, 'serivicio1', 'a todos lados', 0);
+  VALUES (0, 'serivicio1', 'a todos lados', 0);
   INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
-  VALUES (5, 'serivicio1', 'a todos lados', 0);
+  VALUES (0, 'serivicio1', 'a todos lados', 0);
   INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
-  VALUES (6, 'serivicio1', 'a todos lados', 1);
+  VALUES (0, 'serivicio1', 'a todos lados', 1);
 
 
   INSERT INTO OFRECE (id, servicios_id, unidad_id)
-  VALUES (1,2,1);
+  VALUES (0,2,1);
   INSERT INTO OFRECE (id, servicios_id, unidad_id)
-  VALUES (1,1,2);
+  VALUES (0,1,2);
   INSERT INTO OFRECE (id, servicios_id, unidad_id)
-  VALUES (1,3,3);
+  VALUES (0,3,3);
   INSERT INTO OFRECE (id, servicios_id, unidad_id)
-  VALUES (1,4,4);
+  VALUES (0,4,4);
   INSERT INT OFRECE (id, servicios_id, unidad_id)
-  VALUES (1,6,5);
+  VALUES (0,6,5);
   INSERT INTO OFRECE (id, servicios_id, unidad_id)
-  VALUES (1,5,6);
+  VALUES (0,5,6);
 
 INSERT INTO CONTINGENCIA (id, nombre, descripcion)
-  VALUES (1,'lluvia','llueve');
+  VALUES (0,'lluvia','llueve');
 
   INSERT INTO CONTINGENCIA (id, nombre, descripcion)
-  VALUES (2,'tormenta','llueve');
+  VALUES (0,'tormenta','llueve');
   INSERT INTO CONTINGENCIA (id, nombre, descripcion)
-  VALUES (3,'choque','retraso');
+  VALUES (0,'choque','retraso');
   INSERT INTO CONTINGENCIA (id, nombre, descripcion)
-  VALUES (4,'accidentado','retraso');
+  VALUES (0,'accidentado','retraso');
   INSERT INTO CONTINGENCIA (id, nombre, descripcion)
-  VALUES (5,'herido','leve retraso');
+  VALUES (0,'herido','leve retraso');
 INSERT INTO CONTINGENCIA (id, nombre, descripcion)
-  VALUES (6,'huecos','retraso');
+  VALUES (0,'huecos','retraso');
   INSERT INTO CONTINGENCIA (id, nombre, descripcion)
-  VALUES (7,'alcabala','retraso');
+  VALUES (0,'alcabala','retraso');
 
 
 INSERT INTO RUTA (id, contingencia_id, nombre)
-  VALUES (1,1,'plaza venezuela');
+  VALUES (0,1,'plaza venezuela');
   INSERT INTO RUTA (id, contingencia_id, nombre)
-  VALUES (2,1,'caricuao');
+  VALUES (0,1,'caricuao');
   INSERT INTO RUTA (id, contingencia_id, nombre)
-  VALUES (3,1,'chacao');
+  VALUES (0,1,'chacao');
   INSERT INTO RUTA (id, contingencia_id, nombre)
-  VALUES (4,1,'Bellas Artes');
+  VALUES (0,1,'Bellas Artes');
   INSERT INTO RUTA (id, contingencia_id, nombre)
-  VALUES (5,1,'Los crotijos');
+  VALUES (0,1,'Los crotijos');
   INSERT INTO RUTA (id, contingencia_id, nombre)
-  VALUES (6,1,'redoma');
+  VALUES (0,1,'redoma');
 
 
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (1,'parada1','14.47, -66.59');
+  VALUES (0,'parada1','14.47, -66.59');
 
   
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (2,'parada2','30.47, -66.89');
+  VALUES (0,'parada2','30.47, -66.89');
   
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (3,'parada3','10.17, -63.69');
+  VALUES (0,'parada3','10.17, -63.69');
   
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (4,'parada4','10.67, -65.89');
+  VALUES (0,'parada4','10.67, -65.89');
   
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (5,'parada5','20.47, -66.89');
+  VALUES (0,'parada5','20.47, -66.89');
   
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (6,'parada6','16.47, -23.89');
+  VALUES (0,'parada6','16.47, -23.89');
   
  INSERT INTO PED (id,nombre,coordenadas)
-  VALUES (7,'parada7','10.47, -66.83');
+  VALUES (0,'parada7','10.47, -66.83');
 
 
  INSERT INTO RECORRE (id,ruta_id,pos,punto)
-  VALUES (1,1,1,1);
+  VALUES (0,1,1,1);
  INSERT INTO RECORRE (id,ruta_id,pos,punto)
-  VALUES (2,1,2,2);
+  VALUES (0,1,2,2);
  INSERT INTO RECORRE (id,ruta_id,pos,punto)
-  VALUES (3,1,3,3);
+  VALUES (0,1,3,3);
  INSERT INTO RECORRE (id,ruta_id,pos,punto)
-  VALUES (4,1,4,4);
+  VALUES (0,1,4,4);
  INSERT INTO RECORRE (id,ruta_id,pos,punto)
-  VALUES (5,5,4,7);
+  VALUES (0,5,4,7);
  INSERT INTO RECORRE (id,ruta_id,pos,punto)
-  VALUES (6,6,2,5);
+  VALUES (0,6,2,5);
 
 
 
   
 INSERT INTO CATEGORIA (id,nombre,foto)
-  VALUES (1,'bronce',EMPTY_BLOB());
+  VALUES (0,'bronce',EMPTY_BLOB());
   
 INSERT INTO CATEGORIA (id,nombre,foto)
-  VALUES (2,'plata',EMPTY_BLOB());
+  VALUES (0,'plata',EMPTY_BLOB());
 
   
 INSERT INTO CATEGORIA (id,nombre,foto)
-  VALUES (3,'oro',EMPTY_BLOB());
+  VALUES (0,'oro',EMPTY_BLOB());
   
 
 
 
 
   INSERT INTO PLAN (id,tipo_cliente,tipo_unidad,nombre,caracteristicas,fecha)
-  VALUES (1,'natural','Wawa','PLAN1','Caract1', RangoFecha('08-JUN-2022', null));
+  VALUES (0,'natural','Wawa','PLAN1','Caract1', RangoFecha('08-JUN-2022', null));
    INSERT INTO PLAN (id,tipo_cliente,tipo_unidad,nombre,caracteristicas,fecha)
-  VALUES (2,'natural','Wawa','PLAN2','Caract2', RangoFecha('02-JUN-2022', null));
+  VALUES (0,'natural','Wawa','PLAN2','Caract2', RangoFecha('02-JUN-2022', null));
    INSERT INTO PLAN (id,tipo_cliente,tipo_unidad,nombre,caracteristicas,fecha)
-  VALUES (3,'natural','Wawa','PLAN3','Caract3', RangoFecha('01-JUN-2022', null));
+  VALUES (0,'natural','Wawa','PLAN3','Caract3', RangoFecha('01-JUN-2022', null));
    INSERT INTO PLAN (id,tipo_cliente,tipo_unidad,nombre,caracteristicas,fecha)
-  VALUES (4,'natural','Wawa','PLAN4','Caract4', RangoFecha('06-JUN-2022', null));
+  VALUES (0,'natural','Wawa','PLAN4','Caract4', RangoFecha('06-JUN-2022', null));
 
 
      INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
-  VALUES (4,'natural','Wawa','PLAN4','Caract4', RangoFecha('06-JUN-2022', null));
+  VALUES (0,'natural','Wawa','PLAN4','Caract4', RangoFecha('06-JUN-2022', null));
