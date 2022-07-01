@@ -409,7 +409,7 @@ END list_of;
 
 
 
-CREATE OR REPLACE FUNCTION reporteuno (tipo VARCHAR2)
+CREATE OR REPLACE PROCEDURE reporteuno (tipo VARCHAR2)
 DECLARE
    v_names   SYS_REFCURSOR;
    v_        Unidad%rowtype;
@@ -419,7 +419,7 @@ BEGIN
       FETCH v_names INTO v_;
       EXIT WHEN v_names%NOTFOUND;
       DBMS_OUTPUT.put_line(v_);
-   END LOOP;
+    END LOOP;
    -- here you close it
-   CLOSE v_names;
+    CLOSE v_names;
 END;
