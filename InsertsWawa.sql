@@ -22,5 +22,61 @@ INSERT INTO CLIENTE VALUES(NULL,DatosPersonales('Mariah Tacanga','CEDULA','28749
 INSERT INTO CLIENTE VALUES(NULL,DatosPersonales('UCAB','RIF','J101295658'),'1-MAY-2022','CORPORATIVO',NULL,NULL,EMPTY_BLOB()) RETURNING FOTO INTO V_TEMP;
 INSERT INTO CLIENTE VALUES(NULL,DatosPersonales('PANA','RIF','J854596981'),'6-MAY-2022','CORPORATIVO',NULL,NULL,EMPTY_BLOB()) RETURNING FOTO INTO V_TEMP;
 
+    INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
+  VALUES (1, 'serivicio1', 'a todos lados', 1);
+  INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
+  VALUES (2, 'serivicio1', 'a todos lados', 0);
+  INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
+  VALUES (3, 'serivicio1', 'a todos lados', 0);
+  INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
+  VALUES (4, 'serivicio1', 'a todos lados', 0);
+  INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
+  VALUES (5, 'serivicio1', 'a todos lados', 0);
+  INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
+  VALUES (6, 'serivicio1', 'a todos lados', 1);
+
+
+  INSERT INTO OFRECE (id, servicios_id, unidad_id)
+  VALUES (1,2,1);
+  INSERT INTO OFRECE (id, servicios_id, unidad_id)
+  VALUES (1,1,2);
+  INSERT INTO OFRECE (id, servicios_id, unidad_id)
+  VALUES (1,3,3);
+  INSERT INTO OFRECE (id, servicios_id, unidad_id)
+  VALUES (1,4,4);
+  INSERT INT OFRECE (id, servicios_id, unidad_id)
+  VALUES (1,6,5);
+  INSERT INTO OFRECE (id, servicios_id, unidad_id)
+  VALUES (1,5,6);
+
+INSERT INTO CONTINGENCIA (id, nombre, descripcion)
+  VALUES (1,'lluvia','llueve');
+
+  INSERT INTO CONTINGENCIA (id, nombre, descripcion)
+  VALUES (2,'tormenta','llueve');
+  INSERT INTO CONTINGENCIA (id, nombre, descripcion)
+  VALUES (3,'choque','retraso');
+  INSERT INTO CONTINGENCIA (id, nombre, descripcion)
+  VALUES (4,'accidentado','retraso');
+  INSERT INTO CONTINGENCIA (id, nombre, descripcion)
+  VALUES (5,'herido','leve retraso');
+INSERT INTO CONTINGENCIA (id, nombre, descripcion)
+  VALUES (6,'huecos','retraso');
+  INSERT INTO CONTINGENCIA (id, nombre, descripcion)
+  VALUES (7,'alcabala','retraso');
+
+
+  INSERT INTO RUTA (id, contingencia_id, nombre)
+  VALUES (1,1,'plaza venezuela');
+  INSERT INTO RUTA (id, contingencia_id, nombre)
+  VALUES (2,1,'caricuao');
+  INSERT INTO RUTA (id, contingencia_id, nombre)
+  VALUES (3,1,'chacao');
+  INSERT INTO RUTA (id, contingencia_id, nombre)
+  VALUES (4,1,'Bellas Artes');
+  INSERT INTO RUTA (id, contingencia_id, nombre)
+  VALUES (5,1,'Los crotijos');
+  INSERT INTO RUTA (id, contingencia_id, nombre)
+  VALUES (6,1,'redoma');
 
 
