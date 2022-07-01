@@ -8,7 +8,6 @@ DECLARE
   escalaVARCHAR VARCHAR2(2);
   cliente Cliente%rowtype;
   feed VARCHAR2(100);
-  module_name VARCHAR2(100);
 BEGIN
   module_name := 'MCalificacion ';
   IF :new.estado = 'Completado' THEN
