@@ -1,3 +1,25 @@
+INSERT INTO UNIDAD DATOS('Andrés','Álvarez');
+INSERT INTO UNIDAD DATOS('Cristiano','Andrade');
+INSERT INTO UNIDAD DATOS('Gerard','Benítez');
+INSERT INTO UNIDAD DATOS('Lionel','Castillo');
+INSERT INTO UNIDAD DATOS('Neymar','Castro');
+INSERT INTO UNIDAD DATOS('Ana','Contreras');
+INSERT INTO UNIDAD DATOS('Enzo','De León');
+INSERT INTO UNIDAD DATOS('Eva','Díaz');
+INSERT INTO UNIDAD DATOS('Eric','Duarte');
+INSERT INTO UNIDAD DATOS('Hugo','Espinoza');
+INSERT INTO UNIDAD DATOS('Iván','Fernández');
+INSERT INTO UNIDAD DATOS('Juan','Flores');
+INSERT INTO UNIDAD DATOS('Lara','García');
+INSERT INTO UNIDAD DATOS('Leo','Giménez');
+INSERT INTO UNIDAD DATOS('Luz','Gómez');
+INSERT INTO UNIDAD DATOS('Mar','Gonzales');
+INSERT INTO UNIDAD DATOS('Nora','Gutiérrez');
+INSERT INTO UNIDAD DATOS('Raúl','Hernández');
+INSERT INTO UNIDAD DATOS('Héctor','Jiménez');
+INSERT INTO UNIDAD DATOS('Sara','López');
+
+
 INSERT INTO UNIDAD (placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
   VALUES ('AD85956F', RangoFecha('06-JUN-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWA', ' ', 0);
 INSERT INTO UNIDAD (placa, fecha, foto, estado, ruta_id, tipo, ubicacion, numero_asientos)
