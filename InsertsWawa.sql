@@ -137,3 +137,41 @@ INSERT INTO CONTINGENCIA (id, nombre, descripcion)
   VALUES (5,5,4,7);
    INSERT INTO RECORRE (id,ruta_id,salida,llegada)
   VALUES (6,6,2,5);
+
+
+INSERT INTO CATEGORIA (id,nombre,foto)
+  VALUES (1,'basico',);
+
+
+INSERT INTO CATEGORIA (id,nombre,foto)
+  VALUES (1,'basico',);
+  
+INSERT INTO CATEGORIA (id,nombre,foto)
+  VALUES (1,'basico',);
+  
+INSERT INTO CATEGORIA (id,nombre,foto)
+  VALUES (1,'basico',EMPTY_BLOB());
+  
+INSERT INTO CATEGORIA (id,nombre,foto)
+  VALUES (1,'basico',EMPTY_BLOB());
+
+  
+INSERT INTO CATEGORIA (id,nombre,foto)
+  VALUES (1,'basico',EMPTY_BLOB());
+  
+INSERT INTO CATEGORIA (id,nombre,foto)
+  VALUES (1,'basico',EMPTY_BLOB());
+  
+INSERT INTO CATEGORIA (id,nombre,foto)
+  VALUES (1,'basico',EMPTY_BLOB());
+
+
+
+  INSERT INTO PLAN (id,tipo_cliente,tipo_unidad,nombre,caracteristicas,fecha)
+  VALUES (1,'natural','Wawa','PLAN1','Caract1', RangoFecha('08-JUN-2022', null));
+   INSERT INTO PLAN (id,tipo_cliente,tipo_unidad,nombre,caracteristicas,fecha)
+  VALUES (2,'natural','Wawa','PLAN2','Caract2', RangoFecha('02-JUN-2022', null));
+   INSERT INTO PLAN (id,tipo_cliente,tipo_unidad,nombre,caracteristicas,fecha)
+  VALUES (3,'natural','Wawa','PLAN3','Caract3', RangoFecha('01-JUN-2022', null));
+   INSERT INTO PLAN (id,tipo_cliente,tipo_unidad,nombre,caracteristicas,fecha)
+  VALUES (4,'natural','Wawa','PLAN4','Caract4', RangoFecha('06-JUN-2022', null));
