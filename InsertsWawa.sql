@@ -179,4 +179,4 @@ INSERT INTO CATEGORIA (id,nombre,foto)
   VALUES (0,'natural','Wawa','PLAN4','Caract4', RangoFecha('06-JUN-2022', null));
 
   INSERT INTO RESERVA (id,estado,hora_traslado,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
-  Values(0,'ESPERA',RangoFecha('08-JUN-2022', null),100,Calificacion('2','ninguna'),11,23,1,4,1,1)
+  Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),100,Calificacion('2','ninguna'),11,23,1,4,1,1);
