@@ -47,5 +47,5 @@ BEGIN
       VALUES (0, DatosPersonales(NOMBRE || ' ' || APELLIDO ,'CEDULA', to_char(ci, '99999999')), 'NATURAL', gen,'0412-'||to_char(num, '9999999'));
   END IF;
   DBMS_OUTPUT.PUT_LINE(module_name || 'ID = ' || ID);
-  cliente_id := id;
+--  cliente_id := id;
 END;

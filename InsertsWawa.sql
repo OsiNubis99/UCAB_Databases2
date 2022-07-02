@@ -43,16 +43,20 @@ INSERT INTO UNIDAD (id,placa, fecha, foto, estado, ruta_id, tipo, ubicacion, num
   VALUES (0,'AC8GHFFF', RangoFecha('03-JUN-2022', null), EMPTY_BLOB(), 'OPERATIVA', NULL, 'WAWA', ' ', 0);
 
 
-INSERT INTO CLIENTE (id, datos, FECHA_DESDE, tipo, telefono, genero)
-  VALUES (0, DatosPersonales('Alexis Quiros','CEDULA','10059565'),'01-JUL-2022','NATURAL','04125941461','MASCULINO');
-INSERT INTO CLIENTE (id, datos, FECHA_DESDE, tipo, telefono, genero)
-  VALUES (0, DatosPersonales('Fernando','CEDULA','15452365'),'01-JUL-2022','NATURAL','04125941461','MASCULINO');
-INSERT INTO CLIENTE (id, datos, FECHA_DESDE, tipo, telefono, genero)
-  VALUES (0, DatosPersonales('Andrea','CEDULA','15454565'),'01-JUL-2022','NATURAL','04125941461','MASCULINO');
-INSERT INTO CLIENTE VALUES(0,DatosPersonales('Sergio Capon','CEDULA','26747663'),'10-AUG-2022','NATURAL','04125941461','MASCULINO',NULL);
-INSERT INTO CLIENTE VALUES(0,DatosPersonales('Mariah Tacanga','CEDULA','28749638'),'23-MAY-2022','NATURAL','04125941461','FEMENINO',NULL);
-INSERT INTO CLIENTE VALUES(0,DatosPersonales('UCAB','RIF','J101295658'),'1-MAY-2022','CORPORATIVO','021244455','MASCULINO',EMPTY_BLOB()) RETURNING FOTO INTO V_TEMP;
-INSERT INTO CLIENTE VALUES(0,DatosPersonales('PANA','RIF','J854596981'),'6-MAY-2022','CORPORATIVO','041455555','FEMENINO',EMPTY_BLOB()) RETURNING FOTO INTO V_TEMP;
+INSERT INTO CLIENTE (id, datos, tipo, telefono, genero)
+  VALUES (0, DatosPersonales('Alexis Quiros','CEDULA','10059565'),'NATURAL','04125941461','MASCULINO');
+INSERT INTO CLIENTE (id, datos, tipo, telefono, genero)
+  VALUES (0, DatosPersonales('Fernando','CEDULA','15452365'),'NATURAL','04125941461','MASCULINO');
+INSERT INTO CLIENTE (id, datos, tipo, telefono, genero)
+  VALUES (0, DatosPersonales('Andrea','CEDULA','15454565'),'NATURAL','04125941461','MASCULINO');
+INSERT INTO CLIENTE  (id, datos, tipo, telefono, genero)
+  VALUES(0,DatosPersonales('Sergio Capon','CEDULA','26747663'),'10-AUG-2022','NATURAL','04125941461','MASCULINO',NULL);
+INSERT INTO CLIENTE  (id, datos, tipo, telefono, genero)
+  VALUES(0,DatosPersonales('Mariah Tacanga','CEDULA','28749638'),'23-MAY-2022','NATURAL','04125941461','FEMENINO',NULL);
+INSERT INTO CLIENTE  (id, datos, tipo, telefono, genero)
+  VALUES(0,DatosPersonales('UCAB','RIF','J101295658'),'1-MAY-2022','CORPORATIVO','021244455','MASCULINO',null;
+INSERT INTO CLIENTE  (id, datos, tipo, telefono, genero)
+  VALUES(0,DatosPersonales('PANA','RIF','J854596981'),'6-MAY-2022','CORPORATIVO','041455555','FEMENINO', null);
 
     INSERT INTO SERVICIOS (id, nombre, descripcion, exclusivo)
   VALUES (0, 'serivicio1', 'a todos lados', 1);
