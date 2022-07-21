@@ -23,13 +23,16 @@ BEGIN
         OPEN PRC FOR SELECT p.fechas.fecha_inicial  "MES",p.tipo_cliente "TIPO_CLIENTE",p.nombre "NOMBRE_PLAN" ,COUNT(p.id) "PLANES_CONTRATADOS" 
         FROM PLANES P
         INNER JOIN CLIENTE C    
-        where tipo_cliente = c.tipo
+        where tipo_cliente = p.tipo_cliente
         and to_char(fecha_inicio,'mm') = to_char(p.fechas.fecha_inicial,'mm') and to_char(fecha_inicio,'yy') = to_char(p.fechas.fecha_inicial,'yy')
         
 
 
     END IF;
 END;
+
+
+
 
 set autoprint on;
 VARIABLE MEMORYCURSOR REFCURSOR;
