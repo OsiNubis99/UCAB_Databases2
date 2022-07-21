@@ -176,7 +176,7 @@ INSERT INTO CATEGORIA (id,nombre,foto)
   VALUES (0,'natural','Wawa','PLAN4','Caract4', RangoFecha('06-JUN-2022', null));
 
 
-     INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
+INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
   VALUES (0,'natural','Wawa','PLAN4','Caract4', RangoFecha('06-JUN-2022', null));
 
 
