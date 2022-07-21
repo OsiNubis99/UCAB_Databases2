@@ -1,14 +1,15 @@
-CREATE OR REPLACE PROCEDURE REPORTE_12 (prc out sys_refcursor,fecha_inicio date)
+CREATE OR REPLACE PROCEDURE REPORTE_12 (prc out sys_refcursor,fecha_inicio date,tipo_cliente VARCHAR2(100))
 IS 
 BEGIN
     IF ((fechainicio != 'null')) THEN
 
         OPEN PRC FOR SELECT r.fechas.fecha_inicial  "MES",c.tipo "TIPO_CLIENTE",r.calificacion.escala "ESCALA_ClASIFICACION" ,r.calificacion.observaciones"OBSERVACIONES" 
         FROM RESERVA R
-        INNER JOIN CLIENTE C
-        where  r.cliente_id   = c.id
-        where to_char(fecha_inicio,'mm') = to_char(r.fechas.fecha_inicial,'mm') and to_char(fecha_inicio,'yy') = to_char(r.fechas.fecha_inicial,'yy')
-
+        INNER JOIN CLIENTE C    
+        where  r.cliente_id   = c.id 
+        and    tipo_cliente = c.tipo
+        and to_char(fecha_inicio,'mm') = to_char(r.fechas.fecha_inicial,'mm') and to_char(fecha_inicio,'yy') = to_char(r.fechas.fecha_inicial,'yy')
+        
 
 
     END IF;
