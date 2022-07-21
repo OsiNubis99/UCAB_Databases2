@@ -183,15 +183,15 @@ INSERT INTO CATEGORIA (id,nombre,foto)
   VALUES (0,'natural','Wawa','PLAN4','Caract4', RangoFecha('06-JUN-2022', null));
 
   INSERT INTO RESERVA (id,estado,hora_traslado,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
-  Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),100,Calificacion('2','ninguna'),11,23,1,4,1,1);
+  Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),100,Calificacion(':)','ninguna'),11,23,1,4,1,1);
     INSERT INTO RESERVA (id,estado,hora_traslado,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
-  Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),100,Calificacion('2','ninguna'),11,23,1,3,1,2);
+  Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),100,Calificacion(':(','mal servicio'),11,23,1,3,1,2);
     INSERT INTO RESERVA (id,estado,hora_traslado,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
-  Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),100,Calificacion('2','ninguna'),11,23,2,4,1,3);
+  Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),100,Calificacion(':|','regular'),11,23,2,4,1,3);
     INSERT INTO RESERVA (id,estado,hora_traslado,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
-  Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),100,Calificacion('2','ninguna'),11,23,1,2,1,4);
+  Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),100,Calificacion(':|','ninguna'),11,23,1,2,1,4);
     INSERT INTO RESERVA (id,estado,hora_traslado,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
-  Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),100,Calificacion('2','ninguna'),11,23,1,3,1,5);
+  Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),100,Calificacion(':)','puntualidad excelente'),11,23,1,3,1,5);
     INSERT INTO RESERVA (id,estado,hora_traslado,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
-  Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),100,Calificacion('2','ninguna'),11,23,2,3,1,6);
+  Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),100,Calificacion(':|','mejorar trato'),11,23,2,3,1,6);
 
