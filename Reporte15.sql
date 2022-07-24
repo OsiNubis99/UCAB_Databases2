@@ -4,7 +4,7 @@ IS
 BEGIN
     IF (fecha_inicio IS NOT NULL) THEN
 	  OPEN PRC FOR SELECT
-          a.fecha.fecha_inicial as "MES", a.tipo AS "LOGO_EMPRESA",
+          a.fecha.fecha_inicial as "MES", a.logo AS "LOGO_EMPRESA",
           a.nombre AS "NOMBRE" , a.descripcion AS "OBSERVACIONES"
         FROM ALIANZA A
       OPEN PRC FOR SELECT * FROM DUAL;
