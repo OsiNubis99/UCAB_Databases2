@@ -193,4 +193,3 @@ INSERT INTO CONTRATA (id,fecha,activo,plan_id,cliente_id)
   Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),Costo(100,0),Calificacion(':)','puntualidad excelente'),11,23,1,3,1,5);
     INSERT INTO RESERVA (id,estado,hora_traslado,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
   Values(0,'ESPERA',RangoFecha('18-JUN-2022', null),Costo(100,0),Calificacion(':|','mejorar trato'),11,23,2,3,1,6);
-
