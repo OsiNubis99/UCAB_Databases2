@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION ADMIN.REPORTE12 (fecha_inicio date, tipo_cliente VARCHAR2) return sys_refcursor
+CREATE OR REPLACE FUNCTION SYSTEM.REPORTE12 (fecha_inicio date, tipo_cliente VARCHAR2) return sys_refcursor
 IS
   prc sys_refcursor;
 BEGIN
@@ -17,4 +17,4 @@ BEGIN
     return prc;
 END;
 
-select ADMIN.REPORTE12(sysdate,'NATURAL') from dual;
+select SYSTEM.REPORTE12(sysdate,'NATURAL') from dual;

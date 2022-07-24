@@ -12,7 +12,7 @@ BEGIN
     END IF;
 END;
 
-CREATE OR  REPLACE FUNCTION ADMIN.REPORTE10 (prc out sys_refcursor,fecha_inicio date,tipo_cliente VARCHAR2(100))
+CREATE OR  REPLACE FUNCTION SYSTEM.REPORTE10 (prc out sys_refcursor,fecha_inicio date,tipo_cliente VARCHAR2(100))
 IS
 BEGIN
     IF ((fechainicio != 'null')) THEN
@@ -29,4 +29,4 @@ VARIABLE MEMORYCURSOR REFCURSOR;
 EXECUTE REPORTE_12(:MEMORYCURSOR,DATE '2022-JUN-20');
 
 
-select ADMIN.REPORTE12(sysdate,'NATURAL') from dual;
+select SYSTEM.REPORTE12(sysdate,'NATURAL') from dual;
