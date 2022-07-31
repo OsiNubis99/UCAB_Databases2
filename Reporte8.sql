@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION SYSTEM.REPORTE (fecha_inicio date, tipo_unidad VARCHAR2) return sys_refcursor
+CREATE OR REPLACE FUNCTION SYSTEM.REPORTE8 (fecha_inicio date, tipo_unidad VARCHAR2) return sys_refcursor
 IS
   prc sys_refcursor;
 BEGIN
@@ -17,4 +17,4 @@ BEGIN
     return prc;
 END;
 
-select SYSTEM.REPORTE88(sysdate,'WAWA') from dual;
+select SYSTEM.REPORTE8(sysdate,'WAWA') from dual;
