@@ -1,20 +1,21 @@
-CREATE OR REPLACE FUNCTION SYSTEM.REPORTE8 (fecha_inicio date, tipo_unidad VARCHAR2) return sys_refcursor
+CREATE OR REPLACE FUNCTION SYSTEM.REPORTE8 (fecha_inicial date, fecha_final date, tipo_unidad VARCHAR2) return sys_refcursor
 IS
   prc sys_refcursor;
 BEGIN
-    IF (fecha_inicio IS NOT NULL) THEN
-	  OPEN PRC FOR SELECT
-          r.fecha.fecha_inicial as "FECHA_UNIDAD",u.logo as "FOTO_UNIDAD", u.tipo AS "TIPO_UNIDAD",
-          r.calificacion.escala AS "ESCALA_ClASIFICACION" , u.desperfectos AS "OBSERVACIONES"
+	IF (fecha_inicial IS NOT NULL AND fecha_final IS NOT NULL AND fecha_inicial < fecha_final) THEN
+		OPEN PRC FOR SELECT
+          m.fecha.fecha_inicial as "FECHA_DESPERFECTO", u.foto as "FOTO_UNIDAD", u.placa as "PLACA_UNIDAD", u.tipo AS "TIPO_UNIDAD",
+          m.desperfectos AS "DESPERFECTOS", m.fecha.fecha_final AS "FECHA_REPARACION", m.observaciones AS "OBSERVACIONES"
         FROM MANTENIMIENTO M
-        INNER JOIN UNIDAD U on u.id  = m.unidad_id
-        WHERE tipo_unidad = u.tipo
-          and to_char(fecha_inicio,'mm') = to_char(r.fecha.fecha_inicial,'mm')
-          and to_char(fecha_inicio,'yy') = to_char(r.fecha.fecha_inicial,'yy');
+        INNER JOIN UNIDAD U on u.id = m.unidad_id
+        WHERE m.desperfectos IS NOT NULL
+          and tipo_unidad = u.tipo
+          and fecha_inicial <= m.fecha.fecha_inicial
+          and fecha_final >= m.fecha.fecha_inicial;
     ELSE
       OPEN PRC FOR SELECT * FROM DUAL;
     END IF;
     return prc;
 END;
 
-select SYSTEM.REPORTE8(sysdate,'WAWA') from dual;
+select SYSTEM.REPORTE8(sysdate-3, sysdate + 2,'WAWA') from dual;
