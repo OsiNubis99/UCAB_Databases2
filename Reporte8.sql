@@ -1,21 +1,39 @@
-CREATE OR REPLACE FUNCTION SYSTEM.REPORTE8 (fecha_inicial date, fecha_final date, tipo_unidad VARCHAR2) return sys_refcursor
+CREATE OR REPLACE FUNCTION SYSTEM.REPORTE8 (finicial DATE DEFAULT SYSDATE, ffinal DATE DEFAULT SYSDATE, tunidad VARCHAR2) return sys_refcursor
 IS
+  tipo_unidad VARCHAR2(10);
+  fecha_inicial DATE;
+  fecha_final DATE;
   prc sys_refcursor;
 BEGIN
-	IF (fecha_inicial IS NOT NULL AND fecha_final IS NOT NULL AND fecha_inicial < fecha_final) THEN
-		OPEN PRC FOR SELECT
-          m.fecha.fecha_inicial as "FECHA_DESPERFECTO", u.foto as "FOTO_UNIDAD", u.placa as "PLACA_UNIDAD", u.tipo AS "TIPO_UNIDAD",
-          m.desperfectos AS "DESPERFECTOS", m.fecha.fecha_final AS "FECHA_REPARACION", m.observaciones AS "OBSERVACIONES"
+    IF (tunidad IS NULL) THEN
+        tipo_unidad := '%';
+    else
+        tipo_unidad := tunidad;
+    END IF;
+    IF (finicial IS NULL) THEN
+        SELECT TO_DATE(1, 'J') INTO FECHA_INICIAL FROM dual;
+    else
+        fecha_inicial := finicial;
+    END IF;
+    IF (ffinal IS NULL) THEN
+        fecha_final := SYSDATE;
+    else
+        fecha_final := ffinal;
+    END IF;
+    IF (fecha_inicial <= fecha_final) THEN
+        OPEN PRC FOR SELECT
+            m.fecha.fecha_inicial as "FECHA_DESPERFECTO", u.foto as "FOTO_UNIDAD", u.placa as "PLACA_UNIDAD", u.tipo AS "TIPO_UNIDAD",
+            m.desperfectos AS "DESPERFECTOS", m.fecha.fecha_final AS "FECHA_REPARACION", m.observaciones AS "OBSERVACIONES"
         FROM MANTENIMIENTO M
-        INNER JOIN UNIDAD U on u.id = m.unidad_id
+        INNER JOIN UNIDAD U on u.id  = m.unidad_id
         WHERE m.desperfectos IS NOT NULL
-          and tipo_unidad = u.tipo
-          and fecha_inicial <= m.fecha.fecha_inicial
-          and fecha_final >= m.fecha.fecha_inicial;
+          AND u.tipo LIKE tipo_unidad
+          AND fecha_inicial <= M.fecha.fecha_inicial
+          and fecha_final >= M.fecha.fecha_inicial;
     ELSE
-      OPEN PRC FOR SELECT * FROM DUAL;
+        OPEN PRC FOR SELECT DUMMY FROM DUAL;
     END IF;
     return prc;
 END;
 
-select SYSTEM.REPORTE8(sysdate-3, sysdate + 2,'WAWA') from dual;
+select SYSTEM.REPORTE8(sysdate-5, SYSDATE, 'WAWA') from dual;
