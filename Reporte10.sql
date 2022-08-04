@@ -30,8 +30,8 @@ BEGIN
         INNER JOIN ADMIN.CLIENTE CLI on CLI.ID = CON.cliente_ID
         INNER JOIN ADMIN.PLAN P ON P.ID = CON.PLAN_ID
         WHERE CON.ACTIVO = 1
-          AND CON.FECHA.FECHA_INICIAL LIKE '%'
-          AND CLI.TIPO LIKE '%'
+          AND TO_CHAR(CON.FECHA.fecha_inicial, 'MM') LIKE fecha_mes
+          AND CLI.TIPO LIKE tipo_cliente
         GROUP BY P.NOMBRE, P.categoria_id,
           CLI.TIPO, TO_CHAR(CON.FECHA.fecha_inicial, 'MM-YYYY')
       ) CON
