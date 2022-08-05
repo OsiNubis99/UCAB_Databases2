@@ -12,7 +12,44 @@ INSERT INTO SYSTEM.CLIENTE (id, datos, tipo, LOGO)
   VALUES (6, SYSTEM.DatosPersonales('UCAB','RIF','J101295658'),'CORPORATIVO',NULL);
 INSERT INTO SYSTEM.CLIENTE (id, datos, tipo, LOGO)
   VALUES (7, SYSTEM.DatosPersonales('PANA','RIF','J854596981'),'CORPORATIVO', null);
+
+
+INSERT INTO SYSTEM.CLIENTE (id, datos, tipo, LOGO)
+  VALUES (8, SYSTEM.DatosPersonales('juan','CEDULA','270234981'),'NATURAL', null);
+
+INSERT INTO SYSTEM.CLIENTE (id, datos, tipo, LOGO)
+  VALUES (9, SYSTEM.DatosPersonales('FARAMATODO','RIF','J944596981'),'CORPORATIVO', null);
+
+INSERT INTO SYSTEM.CLIENTE (id, datos, tipo, LOGO)
+  VALUES (10, SYSTEM.DatosPersonales('CENTRA MADEREINSE','RIF','J867896981'),'CORPORATIVO', null);
+
+INSERT INTO SYSTEM.CLIENTE (id, datos, tipo, LOGO)
+  VALUES (11, SYSTEM.DatosPersonales('UNICASA','RIF','J854509881'),'CORPORATIVO', null);
+
+INSERT INTO SYSTEM.CLIENTE (id, datos, tipo, LOGO)
+  VALUES (12, SYSTEM.DatosPersonales('Fernando Quiros','CEDULA','6565897'),'NATURAL', null);
+
+INSERT INTO SYSTEM.CLIENTE (id, datos, tipo, LOGO)
+  VALUES (13, SYSTEM.DatosPersonales('Adriana Perez','CEDULA','23456091'),'NATURAL', null);
+
+INSERT INTO SYSTEM.CLIENTE (id, datos, tipo, LOGO)
+  VALUES (14, SYSTEM.DatosPersonales('OSCAR Alejandro','CEDULA','31029403'),'NATURAL', null);
+
+INSERT INTO SYSTEM.CLIENTE (id, datos, tipo, LOGO)
+  VALUES (15, SYSTEM.DatosPersonales('LOCATEL','RIF','J85430494'),'CORPORATIVO', null);
+
+INSERT INTO SYSTEM.CLIENTE (id, datos, tipo, LOGO)
+  VALUES (16, SYSTEM.DatosPersonales('UNICASA','RIF','J858496911'),'CORPORATIVO', null);
+
+INSERT INTO SYSTEM.CLIENTE (id, datos, tipo, LOGO)
+  VALUES (17, SYSTEM.DatosPersonales('POLAR','RIF','J8544395961'),'CORPORATIVO', null);
+
+INSERT INTO SYSTEM.CLIENTE (id, datos, tipo, LOGO)
+  VALUES (18, SYSTEM.DatosPersonales('SANTA MARIA','RIF','J812346981'),'CORPORATIVO', null);
+
+
 SELECT * FROM CLIENTE ;
+
 DELETE FROM SYSTEM.CLIENTE WHERE id = 0;
 
 INSERT INTO SYSTEM.PED (id,nombre,tipo,coordenadas)
@@ -52,15 +89,59 @@ INSERT INTO SYSTEM.UNIDAD (id,placa, fecha, foto, estado, ruta_id, tipo, ubicaci
 SELECT * FROM UNIDAD ;
 
 INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
-  Values(1,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','Bien'),11,2,1,4,1,1);
+  Values(1,'FINALIZADA',SYSDATE-1,SYSTEM.RangoFecha(SYSDATE-1, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','Bien'),11,2,1,4,1,1);
 INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
-  Values(2,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':|','ninguna'),11,5,1,3,1,2);
+  Values(2,'FINALIZADA',SYSDATE-1,SYSTEM.RangoFecha(SYSDATE-1, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':|','ninguna'),11,5,1,3,1,2);
 INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
-  Values(3,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':(','ninguna'),11,1,2,4,1,3);
+  Values(3,'FINALIZADA',SYSDATE-2,SYSTEM.RangoFecha(SYSDATE-2, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':(','ninguna'),11,1,2,4,1,3);
 INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
-  Values(4,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','ninguna'),11,2,1,2,1,4);
+  Values(4,'FINALIZADA',SYSDATE-2,SYSTEM.RangoFecha(SYSDATE-2, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','ninguna'),11,2,1,2,1,4);
 INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
-  Values(5,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','ninguna'),11,3,1,3,1,5);
+  Values(5,'FINALIZADA',SYSDATE-2,SYSTEM.RangoFecha(SYSDATE-2, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','ninguna'),11,3,1,3,1,5);
 INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
-  Values(6,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':|','ninguna'),11,1,2,3,1,6);
+  Values(6,'FINALIZADA',SYSDATE-2,SYSTEM.RangoFecha(SYSDATE-2, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':|','ninguna'),11,1,2,3,1,6);
 SELECT * FROM SYSTEM.RESERVA;
+
+
+INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(7,'FINALIZADA',SYSDATE-1,SYSTEM.RangoFecha(SYSDATE, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','Bien'),11,2,1,4,1,7);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(8,'FINALIZADA',SYSDATE-1,SYSTEM.RangoFecha(SYSDATE, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','Bien'),11,2,1,4,1,9);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(9,'FINALIZADA',SYSDATE-1,SYSTEM.RangoFecha(SYSDATE-1, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','Bien'),11,2,1,4,1,8);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(10,'FINALIZADA',SYSDATE-1,SYSTEM.RangoFecha(SYSDATE-1, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','Bien'),11,2,1,4,1,10);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(11,'FINALIZADA',SYSDATE-1,SYSTEM.RangoFecha(SYSDATE-1, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','Bien'),11,2,1,4,1,11);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(12,'FINALIZADA',SYSDATE-1,SYSTEM.RangoFecha(SYSDATE-1, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','Bien'),11,2,1,4,1,12);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(13,'FINALIZADA',SYSDATE-1,SYSTEM.RangoFecha(SYSDATE-1, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','Bien'),11,2,1,4,1,1);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(14,'FINALIZADA',SYSDATE-1,SYSTEM.RangoFecha(SYSDATE-1, SYSDATE),SYSTEM.Costo(100,0),SYSTEM.Calificacion(':)','Bien'),11,2,1,4,1,4);
+  
+  
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(15,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion('',''),10,2,1,4,2,2);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(16,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion('',''),9,3,1,5,2,5);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(17,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion('',''),8,4,1,6,2,7);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(18,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion('',''),7,1,2,7,2,5);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(19,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion('',''),11,3,4,8,2,8);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(20,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion('',''),10,2,1,4,2,9);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(21,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion('',''),16,4,1,3,2,4);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(22,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion('',''),15,5,1,3,2,6);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(23,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion('',''),15,6,2,4,3,14);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(24,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion('',''),7,4,3,5,3,3);
+  INSERT INTO SYSTEM.RESERVA (id,estado,hora_traslado,fechas,costo,calificacion,duracion,puestos,embarque,desembarque,unidad_id,cliente_id)
+  Values(25,'ESPERA',SYSDATE,SYSTEM.RangoFecha(SYSDATE, null),SYSTEM.Costo(100,0),SYSTEM.Calificacion('',''),3,3,1,6,3,9);
+
+

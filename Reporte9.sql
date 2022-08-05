@@ -6,7 +6,7 @@ BEGIN
 	  OPEN PRC FOR SELECT
           r.fechas.fecha_inicial as "MES", c.tipo AS "TIPO_CLIENTE",
           r.calificacion.escala AS "ESCALA_ClASIFICACION" , r.calificacion.observaciones AS "OBSERVACIONES"
-        FROM RESERVA R
+        FROM mantenimiento m
         INNER JOIN CLIENTE C on r.cliente_id   = c.id
         WHERE tipo_cliente = c.tipo
           and to_char(fecha_inicio,'mm') = to_char(r.fechas.fecha_inicial,'mm')
