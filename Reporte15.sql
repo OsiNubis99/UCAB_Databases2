@@ -1,15 +1,27 @@
-CREATE OR REPLACE FUNCTION SYSTEM.REPORTE15 (fecha_inicio date) return sys_refcursor
+CREATE OR REPLACE PROCEDURE SYSTEM.REPORTE15 (prc out sys_refcursor, finicial DATE DEFAULT SYSDATE, ffinal DATE DEFAULT SYSDATE)
 IS
-  prc sys_refcursor;
+  fecha_inicial DATE;
+  fecha_final DATE;
 BEGIN
-    IF (fecha_inicio IS NOT NULL) THEN
-	  OPEN PRC FOR SELECT
-          a.fecha.fecha_inicial as "MES", a.logo AS "LOGO_EMPRESA",
-          a.nombre AS "NOMBRE" , a.descripcion AS "OBSERVACIONES"
-        FROM ALIANZA A
-      OPEN PRC FOR SELECT * FROM DUAL;
+    IF (finicial IS NULL) THEN
+        SELECT TO_DATE(1, 'J') INTO FECHA_INICIAL FROM dual;
+    else
+        fecha_inicial := finicial;
     END IF;
-    return prc;
+    IF (ffinal IS NULL) THEN
+        fecha_final := SYSDATE;
+    else
+        fecha_final := ffinal;
+    END IF;
+    OPEN PRC FOR SELECT
+        TO_CHAR(a.FECHA.fecha_inicial, 'DD-MM-YYYY') as "FECHA",
+        a.logo AS "LOGO_EMPRESA",
+        a.nombre AS "NOMBRE" ,
+        a.descripcion AS "OBSERVACIONES"
+      FROM ALIANZA A
+      where a.fecha.fecha_final IS NULL
+        AND fecha_inicial <= a.fecha.fecha_inicial
+        AND fecha_final >= a.fecha.fecha_inicial;
 END;
 
-select SYSTEM.REPORTE15(sysdate) from dual;
+select SYSTEM.REPORTE15(null,null) from dual;

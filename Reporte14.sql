@@ -1,17 +1,46 @@
-CREATE OR REPLACE FUNCTION SYSTEM.REPORTE14 (fecha_inicio date) return sys_refcursor
+CREATE OR REPLACE PROCEDURE SYSTEM.REPORTE14 (prc out sys_refcursor, finicial DATE DEFAULT SYSDATE, ffinal DATE DEFAULT SYSDATE, tunidad VARCHAR2, tcliente VARCHAR2)
 IS
-  prc sys_refcursor;
-
+  TIPO_CLIENTE VARCHAR2(20);
+  tipo_unidad VARCHAR2(20);
+  fecha_inicial DATE;
+  fecha_final DATE;
 BEGIN
-    IF ((fechainicio != 'null')) THEN
-        OPEN PRC FOR SELECT r.fechas.fecha_inicial  "MES",u.tipo "TIPO_CLIENTE",c.tipo "TIPO_CLIENTE",r.embarque "PUNTO_EMBARQUE",r.desembarque "PUNTO_DESEMBARQUE"
-        FROM RESERVA R
-        INNER JOIN CLIENTE C  on r.cliente_id   = c.id
-        INNER JOIN UNIDAD U on u.id= r.unidad_id
-        where tipo_cliente = p.tipo_cliente
-        and to_char(fecha_inicio,'mm') = to_char(p.fechas.fecha_inicial,'mm') and to_char(fecha_inicio,'yy') = to_char(p.fechas.fecha_inicial,'yy')
+    IF (TCLIENTE IS NULL) THEN
+        TIPO_CLIENTE := '%';
+    else
+        TIPO_CLIENTE := TCLIENTE;
     END IF;
-    return prc;
+    IF (tunidad IS NULL) THEN
+        tipo_unidad := '%';
+    else
+        tipo_unidad := tunidad;
+    END IF;
+    IF (finicial IS NULL) THEN
+        SELECT TO_DATE(1, 'J') INTO FECHA_INICIAL FROM dual;
+    else
+        fecha_inicial := finicial;
+    END IF;
+    IF (ffinal IS NULL) THEN
+        fecha_final := SYSDATE;
+    else
+        fecha_final := ffinal;
+    END IF;
+    OPEN PRC FOR SELECT
+      TO_CHAR(R.FECHAS.fecha_inicial, 'DD-MM-YYYY') as "FECHA-RESERVA",
+      TO_CHAR(R.hora_traslado, 'DD-MM-YYYY') as "FECHA-TRASLADO",
+      TO_CHAR(R.hora_traslado, 'HH:MI') as "HORA-TRASLADO",
+      u.tipo "TIPO_UNIDAD",
+      c.tipo "TIPO_CLIENTE",
+      'Punto embarque ' || r.embarque "PUNTO_EMBARQUE",
+      'Punto desembarque ' || r.desembarque "PUNTO_DESEMBARQUE"
+    FROM RESERVA R
+    INNER JOIN CLIENTE C  on r.cliente_id   = c.id
+    INNER JOIN UNIDAD U on u.id= r.unidad_id
+    where R.estado = 'ESPERA'
+      AND c.TIPO LIKE tipo_cliente
+      AND u.TIPO LIKE tipo_unidad
+      AND fecha_inicial <= r.fechas.fecha_inicial
+      AND fecha_final >= r.fechas.fecha_inicial;
 END;
 
-select SYSTEM.REPORTE14(sysdate) from dual;
+select SYSTEM.REPORTE14(NULL,NULL,NULL,NULL) from dual;

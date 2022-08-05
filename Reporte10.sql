@@ -1,21 +1,38 @@
-
-CREATE OR  REPLACE FUNCTION SYSTEM.REPORTE10 (prc out sys_refcursor,fecha_inicio date,tipo_cliente VARCHAR2(100))
+CREATE OR REPLACE PROCEDURE SYSTEM.REPORTE10 (prc out sys_refcursor, fmes VARCHAR2, tcliente VARCHAR2)
 IS
+  FECHA_MES VARCHAR2(20);
+  TIPO_CLIENTE VARCHAR2(20);
 BEGIN
-    IF ((fechainicio != 'null')) THEN""
-        OPEN PRC FOR SELECT p.fechas.fecha_inicial  "MES",h.foto "CATEGORIA_PLAN",p.tipo_cliente "TIPO_CLIENTE",p.nombre "NOMBRE_PLAN" ,COUNT(p.id) "PLANES_CONTRATADOS"
-        FROM PLANES P
-        INNER JOIN CLIENTE C
-        on tipo_cliente = p.tipo_cliente
-        INNER JOIN CATEGORITA H
-        on h.id = p.categoria_id
-        WHERE to_char(fecha_inicio,'mm') = to_char(p.fechas.fecha_inicial,'mm') and to_char(fecha_inicio,'yy') = to_char(p.fechas.fecha_inicial,'yy')
+    IF (FMES IS NULL) THEN
+        FECHA_MES := '%';
+    else
+        FECHA_MES := FMES;
     END IF;
+    IF (TCLIENTE IS NULL) THEN
+        TIPO_CLIENTE := '%';
+    else
+        TIPO_CLIENTE := TCLIENTE;
+    END IF;
+    OPEN PRC FOR SELECT
+        CAT.foto "CATEGORIA_PLAN",
+        CON."NOMBRE_PLAN",
+        CON."TIPO_CLIENTE",
+        CON."PLANES_CONTRATADOS",
+        CON."FECHA"
+      from (SELECT
+          P.NOMBRE "NOMBRE_PLAN",
+          P.categoria_id "CAT_ID",
+          CLI.TIPO "TIPO_CLIENTE",
+          COUNT(CON.id) "PLANES_CONTRATADOS",
+          TO_CHAR(CON.FECHA.fecha_inicial, 'MM-YYYY') "FECHA"
+        FROM SYSTEM.CONTRATA CON
+        INNER JOIN SYSTEM.CLIENTE CLI on CLI.ID = CON.cliente_ID
+        INNER JOIN SYSTEM.PLAN P ON P.ID = CON.PLAN_ID
+        WHERE CON.ACTIVO = 1
+          AND TO_CHAR(CON.FECHA.fecha_inicial, 'MM') LIKE fecha_mes
+          AND CLI.TIPO LIKE tipo_cliente
+        GROUP BY P.NOMBRE, P.categoria_id,
+          CLI.TIPO, TO_CHAR(CON.FECHA.fecha_inicial, 'MM-YYYY')
+      ) CON
+      INNER JOIN SYSTEM.CATEGORIA CAT on CAT.id = CON.CAT_ID;
 END;
-
-set autoprint on;
-VARIABLE MEMORYCURSOR REFCURSOR;
-EXECUTE REPORTE_12(:MEMORYCURSOR,DATE '2022-JUN-20');
-
-
-select SYSTEM.REPORTE10(sysdate,'NATURAL') from dual;
