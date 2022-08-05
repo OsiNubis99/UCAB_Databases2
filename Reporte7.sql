@@ -1,4 +1,4 @@
-CREATE OR REPLACE PROCEDURE SYSTEM.REPORTE7 (prc out sys_refcursor, finicial DATE DEFAULT SYSDATE, ffinal DATE DEFAULT SYSDATE, tunidad VARCHAR2)
+CREATE OR REPLACE PROCEDURE SYSTEM.REPORTE7 (prc out sys_refcursor, finicial DATE, ffinal DATE, tunidad VARCHAR2)
 IS
   tipo_unidad VARCHAR2(10);
   fecha_inicial DATE;
@@ -34,5 +34,3 @@ BEGIN
         OPEN PRC FOR SELECT DUMMY FROM DUAL;
     END IF;
 END;
-
-select SYSTEM.REPORTE7(sysdate-5, SYSDATE, 'WAWA') from dual;
