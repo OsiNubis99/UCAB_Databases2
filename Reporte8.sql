@@ -1,9 +1,8 @@
-CREATE OR REPLACE FUNCTION SYSTEM.REPORTE8 (finicial DATE DEFAULT SYSDATE, ffinal DATE DEFAULT SYSDATE, tunidad VARCHAR2) return sys_refcursor
+CREATE OR REPLACE PROCEDURE SYSTEM.REPORTE8 (prc out sys_refcursor, finicial DATE DEFAULT SYSDATE, ffinal DATE DEFAULT SYSDATE, tunidad VARCHAR2)
 IS
   tipo_unidad VARCHAR2(10);
   fecha_inicial DATE;
   fecha_final DATE;
-  prc sys_refcursor;
 BEGIN
     IF (tunidad IS NULL) THEN
         tipo_unidad := '%';
@@ -33,7 +32,6 @@ BEGIN
     ELSE
         OPEN PRC FOR SELECT DUMMY FROM DUAL;
     END IF;
-    return prc;
 END;
 
 select SYSTEM.REPORTE8(sysdate-5, SYSDATE, 'WAWA') from dual;

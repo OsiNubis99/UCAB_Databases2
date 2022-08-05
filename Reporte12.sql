@@ -1,8 +1,7 @@
-CREATE OR REPLACE FUNCTION ADMIN.REPORTE12 (fmes VARCHAR2, tcliente VARCHAR2) RETURN SYS_REFCURSOR
+CREATE OR REPLACE PROCEDURE ADMIN.REPORTE12 (prc out sys_refcursor, fmes VARCHAR2, tcliente VARCHAR2)
 IS
   FECHA_MES VARCHAR2(20);
   TIPO_CLIENTE VARCHAR2(20);
-  PRC sys_refcursor;
 BEGIN
     IF (FMES IS NULL) THEN
         FECHA_MES := '%';
@@ -24,7 +23,6 @@ BEGIN
       WHERE R.calificacion.escala is not null
         AND TO_CHAR(r.FECHAS.fecha_inicial, 'MM') LIKE fecha_mes
         AND c.TIPO LIKE tipo_cliente;
-    RETURN PRC;
 END;
 
 select ADMIN.REPORTE12(null,null) from dual;

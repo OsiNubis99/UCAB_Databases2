@@ -1,10 +1,9 @@
-CREATE OR REPLACE FUNCTION SYSTEM.REPORTE14 (finicial DATE DEFAULT SYSDATE, ffinal DATE DEFAULT SYSDATE, tunidad VARCHAR2, tcliente VARCHAR2) return sys_refcursor
+CREATE OR REPLACE PROCEDURE SYSTEM.REPORTE14 (prc out sys_refcursor, finicial DATE DEFAULT SYSDATE, ffinal DATE DEFAULT SYSDATE, tunidad VARCHAR2, tcliente VARCHAR2)
 IS
   TIPO_CLIENTE VARCHAR2(20);
   tipo_unidad VARCHAR2(20);
   fecha_inicial DATE;
   fecha_final DATE;
-  prc sys_refcursor;
 BEGIN
     IF (TCLIENTE IS NULL) THEN
         TIPO_CLIENTE := '%';
@@ -42,7 +41,6 @@ BEGIN
       AND u.TIPO LIKE tipo_unidad
       AND fecha_inicial <= r.fechas.fecha_inicial
       AND fecha_final >= r.fechas.fecha_inicial;
-    RETURN PRC;
 END;
 
 select SYSTEM.REPORTE14(NULL,NULL,NULL,NULL) from dual;
